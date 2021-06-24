@@ -1,0 +1,149 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "diu",
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#const"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#entitys"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#funccalls"
+		}
+	],
+	"repository": {
+		"const": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "[0-9\\.]+"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.diu",
+					"match": "\\b(if|while|for|return)\\b"
+				},
+				{
+					"name": "keyword.static.diu",
+					"match": "\\bstatic\\b"
+				},
+				{
+					"name": "keyword.module.diu",
+					"match": "\\bmodule\\b"
+				},
+				{
+					"name": "keyword.engine.diu",
+					"match": "\\bengine\\b"
+				},
+				{
+					"name": "keyword.control.import.from.diu",
+					"match": "\\bfrom\\b"
+				},
+				{
+					"name": "keyword.control.import.use.diu",
+					"match": "\\buse\\b"
+				},
+				{
+					"name": "keyword.control.import.run.diu",
+					"match": "\\brun\\b"
+				},
+				{
+					"name": "keyword.control.import.await.diu",
+					"match": "\\bawait\\b"
+				},
+				{
+					"name": "keyword.control.import.let.diu",
+					"match": "\\blet\\b"
+				},
+				{
+					"name": "keyword.operator.assign",
+					"match": "="
+				},
+				{
+					"name": "keyword.operator",
+					"match": "[><+\\-*/%]"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.diu",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.diu",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+			"name": "comment.line",
+			"patterns": [
+				{
+					"name": "comment.line.diu",
+					"match": "//.*"
+				}
+			]
+		},
+		"entitys": {
+			"patterns": [
+				{
+					"match": "(node)\\s+([^\\{\\s]+)\\s*\\{",
+					"captures": {
+						"1": {
+							"name": "keyword.node.diu"
+						},
+						"2": {
+							"name": "entity.name.class"
+						}
+					}
+				},
+				{
+					"match": "(fn)\\s+([^\\(\\s]+)\\s*\\(",
+					"captures": {
+						"1": {
+							"name": "keyword.func.diu"
+						},
+						"2": {
+							"name": "entity.name.function"
+						}
+					}
+				}
+			]
+		},
+		"funccalls": {
+			"patterns": [
+				{
+					"match": "\\:?([^\\:\\s]+)\\(",
+					"captures": {
+						"1": {
+							"name": "entity.name.function"
+						}
+					}
+				},
+				{
+					"match": "\\:\\s+([^\\s\\)]+)[,\\)]",
+					"captures": {
+						"1": {
+							"name": "entity.name.type"
+						}
+					}
+				}
+			]
+		}
+	},
+	"scopeName": "source.diu"
+}

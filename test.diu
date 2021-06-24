@@ -1,0 +1,18 @@
+module my
+from a use {b}
+use h
+// 测试
+node Main {
+    static fn main() {
+        let a = 0
+        if(add(1.5,2) > 0){
+            sys:print("YES")
+        }
+        a.b.c = ""
+        run add(1, 2)
+        await a
+    }
+    fn add(a: num, b: num) {
+        return a + b
+    }
+}

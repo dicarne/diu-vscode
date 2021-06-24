@@ -1,0 +1,35 @@
+{
+    "name": "diu",
+    "displayName": "diu",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "dicarne",
+    "engines": {
+        "vscode": "^1.57.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "diu",
+                "aliases": [
+                    "diu",
+                    "diu"
+                ],
+                "extensions": [
+                    "diu"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "diu",
+                "scopeName": "source.diu",
+                "path": "./syntaxes/diu.tmLanguage.json"
+            }
+        ]
+    }
+}
