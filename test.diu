@@ -11,6 +11,8 @@ node Main {
         a.b.c = ""
         run add(1, 2)
         await a
+        continue
+        break
     }
     fn add(a: num, b: num) {
         return a + b

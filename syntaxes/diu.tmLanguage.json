@@ -69,6 +69,14 @@
 					"match": "\\blet\\b"
 				},
 				{
+					"name": "keyword.control.import.continue.diu",
+					"match": "\\bcontinue\\b"
+				},
+				{
+					"name": "keyword.control.import.break.diu",
+					"match": "\\bbreak\\b"
+				},
+				{
 					"name": "keyword.operator.assign",
 					"match": "="
 				},
